@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mai · 你好</title>
+<meta name="description" content="Mai: CS student in LA, learning Chinese, building small tools.">
+<style>
+  :root { --bg:#fff8f0; --fg:#2a2320; --muted:#7a6a60; --accent:#e4572e; --card:#ffffff; --line:#f0e2d4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1a1614; --fg:#f3ebe4; --muted:#a8988c; --accent:#ff7a50; --card:#241e1b; --line:#3a302b; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 system-ui, -apple-system, "PingFang SC", "Noto Sans SC", sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:64px 20px; }
+  .hanzi { font-size:clamp(64px, 18vw, 120px); font-weight:800; line-height:1; color:var(--accent); cursor:pointer; user-select:none; }
+  .pinyin { color:var(--muted); font-size:15px; min-height:1.6em; }
+  h1 { font-size:clamp(28px, 6vw, 40px); margin:24px 0 8px; }
+  h2 { font-size:14px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:48px 0 12px; }
+  p { margin:0 0 12px; }
+  a { color:var(--accent); }
+  .tags span { display:inline-block; border:1px solid var(--line); border-radius:99px; padding:2px 12px; margin:0 6px 8px 0; font-size:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:12px; }
+  .card a { font-weight:600; text-decoration:none; }
+  .card p { color:var(--muted); margin:4px 0 0; font-size:15px; }
+  footer { margin-top:64px; color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hanzi" id="hz" title="click me">你好</div>
+  <div class="pinyin" id="py">nǐ hǎo · hello</div>
+
+  <h1>hi, i'm Mai.</h1>
+  <p>CS major in Los Angeles 🌴. I build small tools that glue things together, and I'm learning Chinese one tone at a time.</p>
+  <div class="tags"><span>Python</span><span>JavaScript</span><span>Linux</span><span>Git</span><span>中文 (learning)</span></div>
+
+  <h2>Projects</h2>
+  <div class="card">
+    <a href="https://github.com/KwkQwQ-BwB/chaoxing-ai-proxy">chaoxing-ai-proxy →</a>
+    <p>Turns 超星 / 萤火虫 AI into an OpenAI-compatible API.</p>
+  </div>
+  <div class="card">
+    <a href="https://github.com/KwkQwQ-BwB/KwkQwQ-BwB.github.io">this website →</a>
+    <p>One HTML file, no build step. Click the big characters up top.</p>
+  </div>
+
+  <h2>Now</h2>
+  <p>📚 surviving CS classes &nbsp;·&nbsp; 🀄 practicing 声调 daily &nbsp;·&nbsp; 🧋 ranking every boba shop in LA</p>
+
+  <h2>Say hi</h2>
+  <p><a href="https://github.com/KwkQwQ-BwB">github.com/KwkQwQ-BwB</a></p>
+
+  <footer>学而时习之 · made in LA</footer>
+</main>
+<script>
+  const words = [["你好","nǐ hǎo · hello"],["代码","dài mǎ · code"],["洛杉矶","luò shān jī · Los Angeles"],["学习","xué xí · to study"],["奶茶","nǎi chá · milk tea"],["加油","jiā yóu · you got this"],["电脑","diàn nǎo · computer"]];
+  let i = 0;
+  document.getElementById("hz").onclick = () => {
+    i = (i + 1) % words.length;
+    hz.textContent = words[i][0];
+    py.textContent = words[i][1];
+  };
+</script>
+</body>
+</html>
